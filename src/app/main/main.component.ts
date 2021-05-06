@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-main',
@@ -7,9 +8,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  constructor() { }
+  pokemons : any[] = [];
+  constructor(
+    private dataService: DataService
+  ) { }
 
   ngOnInit(): void {
+    
+    for (let i = 0; i < localStorage.length; i++){
+      let key = localStorage.key(i);
+      if (key!= null) {
+        console.log(key);
+        this.dataService.getMoreData(key).subscribe((response: any) =>{
+          this.pokemons.push(response);
+          console.log(this.pokemons);
+        }
+
+      )};
+    }
+      
+      
+      
+    
   }
 
 }

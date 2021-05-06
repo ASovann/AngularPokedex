@@ -32,10 +32,10 @@
         <b>Abilities:</b> <span> {{ pokemon[0].abilities[0].ability.name }}, {{ pokemon[0].abilities[1].ability.name }}</span>
     </p>
     <p>
-        <button type="button" class="btn btn-info" (click)="setCapture()">Capture</button>
+        
         <b>     Captured:   </b><span>{{ getCapture() }}</span>
         
     </p>
-    
+    <button type="button" class="btn btn-info" (click)="setCapture()">Capture</button>
     <button type="button"  class="btn btn-danger" routerLink="/Pokemon-List-Component">Return</button>
 </div>

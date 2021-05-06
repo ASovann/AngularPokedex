@@ -1,1 +1,12 @@
-<img src="../../assets/icon-512x512.png" class="center" routerLink="/Pokemon-List-Component">
+<h3 class="display-3">Pokemon caught</h3>
+<div class="pokemon-grid" *ngIf='pokemons.length != 0' else noPokemon>
+    <div class="box" *ngFor="let pokemon of pokemons" routerLink="/Pokemon-Info-Component/{{ pokemon.name }}">
+        <img [src]="pokemon.sprites.front_default" class="pokemon-sprite">
+        <h3 class="pokemon-title">{{ pokemon.name }}</h3>
+    </div>
+</div>
+<div #noPokemon>
+    <p>
+        <span><h6><i>No Pokemon caught</i></h6></span>
+    </p>
+</div>
