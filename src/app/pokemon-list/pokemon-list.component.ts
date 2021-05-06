@@ -8,6 +8,7 @@ import { DataService } from '../services/data.service';
 })
 export class PokemonListComponent implements OnInit {
   pokemons : any[] = [];
+  searchText;
 
   constructor(
     private dataService: DataService
